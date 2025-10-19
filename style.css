@@ -1,0 +1,1749 @@
+/* =============================================
+   SLIDESHOW RESPONSIVO - CORRIGIDO
+   ============================================= */
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%; /* Proporção mais baixa para mostrar mais da imagem */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #f5f5f5; /* Fundo para áreas vazias */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slideshow img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Mudei de 'cover' para 'contain' para mostrar imagem inteira */
+    object-position: center;
+}
+
+/* =============================================
+   RESPONSIVIDADE DO SLIDESHOW POR BREAKPOINT
+   ============================================= */
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+    .slideshow {
+        padding-bottom: 65%;
+    }
+}
+
+/* Desktop médio */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .slideshow {
+        padding-bottom: 70%;
+    }
+}
+
+/* Tablets */
+@media (max-width: 991px) and (min-width: 768px) {
+    .slideshow {
+        padding-bottom: 75%;
+    }
+}
+
+/* Tablets pequenos e mobile landscape */
+@media (max-width: 767px) and (min-width: 576px) {
+    .slideshow {
+        padding-bottom: 80%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .slideshow {
+        padding-bottom: 85%;
+        max-width: 100%;
+    }
+}
+
+/* Ajuste especial para cards em telas menores */
+@media (max-width: 768px) {
+    .energy-card {
+        flex-direction: column !important;
+    }
+    
+    .energy-image {
+        min-height: 280px;
+        width: 100%;
+    }
+    
+    .slideshow {
+        padding-bottom: 90%;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 480px) {
+    .slideshow {
+        padding-bottom: 95%;
+    }
+    
+    .energy-image {
+        min-height: 220px;
+    }
+}
+
+/* Ajuste para telas extremamente pequenas */
+@media (max-width: 375px) {
+    .slideshow {
+        padding-bottom: 100%;
+    }
+    
+    .energy-image {
+        min-height: 200px;
+    }
+}
+
+/* Garantir que o container da imagem seja responsivo */
+.energy-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Correção para orientação landscape em mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .slideshow {
+        padding-bottom: 50%;
+    }
+    
+    .energy-image {
+        min-height: 120px;
+        min-width: 120px;
+    }
+}
+
+/* Melhorias de performance para imagens */
+.slideshow img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Container para garantir que as imagens fiquem centralizadas */
+.slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+/* Ajuste para garantir que o card tenha altura mínima adequada */
+.energy-card {
+    min-height: 400px;
+}
+
+@media (max-width: 768px) {
+    .energy-card {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .energy-card {
+        min-height: 450px;
+    }
+}
+   /* =============================================
+   ESTILOS ORIGINAIS PARA STORE-ITEM E COMPANY-SALE
+   ============================================= */
+
+.store-item {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.089);
+    border-left: 4px solid #21be31;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 100px;
+}
+
+.company-sale {
+    background-color: var(--light-gray);
+    padding: 25px;
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    margin-right: 50px;
+    min-height: 100px; 
+}
+/* Melhorias para Pontos de Venda */
+.sales-search {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.sales-points-section .container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.sales-map {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.simple-empresas-box {
+    background: var(--primary-white);
+    border: 2px solid var(--primary-yellow);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.simple-empresas-box h3 {
+    color: var(--primary-black);
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--dark-gray);
+    font-size: 1rem;
+    margin: 0;
+}
+#stateSelect {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    min-width: 250px;
+    background: white;
+}
+
+.show-map-btn {
+    background: #2c5530;
+    color: rgb(70, 70, 70);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.show-map-btn:hover {
+    background: #1e3a23;
+}
+
+.sales-map {
+    background: #505050;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    min-height: 200px;
+}
+
+.stores-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.store-item {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.089);
+    border-left: 4px solid #21be31;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.store-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(114, 114, 114, 0.15);
+}
+
+.store-item h4 {
+    color: #333131a8;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.store-info {
+    margin-bottom: 15px;
+}
+
+.store-info p {
+    margin: 5px 0;
+    color: #333333;
+}
+
+.contact-store-btn {
+    background: #2fb861;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.contact-store-btn:hover {
+    background: #128C7E;
+}
+.empresas-box {
+    background: #f8f9fa;
+    border-left: 5px solid #FFD700;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.store-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.whatsapp-btn {
+    background: #2fb861;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+}
+
+/* Filtros adicionais */
+.sales-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+}
+
+/*  Galerria de img*/
+
+.slideshow {
+    position: relative;
+    width: 550px;
+    height: 610px;
+    margin: auto;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slide.active {
+    opacity: 1;
+}
+.slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Scroll suave*/
+   #btnTopo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+ 
+    #btnTopo:hover {
+      background: #555;
+    } 
+
+
+    /* Estilos para os botões de leitura de texto */
+.energy-card button {
+    background-color: #3b8a3def;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.energy-card button:hover {
+    background-color: #47af4cee;
+}
+
+.energy-card button:last-child {
+    background-color: #bd392fee;
+}
+
+.energy-card button:last-child:hover {
+    background-color: #da190b;
+}
+
+/* Destaque para o card que está sendo lido */
+.energy-card.reading {
+    border: 2px solid #4caf4f;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis CSS para cores, tamanhos e transições */
+:root {
+    /* Cores principais */
+    --primary-yellow: #FFD700;
+    --primary-black: #000000f6;
+    --primary-white: #F8F8F8;
+    --light-gray: #F5F5F5;
+    --dark-gray: #333333da;
+    
+    /* Propriedades de design */
+    --border-radius: 15px;
+    --transition: all 0.3s ease;
+    
+    /* Tamanhos de fonte - escala responsiva */
+    --base-font-size: 17px;
+    --heading-1: 3.6rem;
+    --heading-2: 2.6rem;
+    --heading-3: 2.0rem;
+    --heading-4: 1.5rem;
+    --heading-5: 1.3rem;
+    --paragraph: 1.1rem;
+    --paragraph-large: 1.3rem;
+    --button-text: 1.2rem;
+    --normal-text: 1.0rem;
+}
+
+/* Importação da fonte Montserrat do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+
+/* =============================================
+   CONFIGURAÇÕES DE TIPOGRAFIA
+   ============================================= */
+
+/* Configurações base do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: var(--base-font-size);
+    line-height: 1.5;
+    color: var(--primary-black);
+    background-color: var(--primary-white);
+    justify-content: flex-start;
+}
+
+/* Títulos da seção hero */
+.hero-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--heading-1);
+    font-weight: 900;
+}
+
+.hero-section p {
+    font-size: var(--paragraph-large);
+}
+
+/* Títulos da seção de tipos de energia */
+.energy-types-section h2,
+.energy-types-section h7 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--heading-2);
+    font-weight: 700;
+}
+
+.energy-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--heading-3);
+    font-weight: 700;
+}
+
+.energy-content p {
+    font-size: var(--paragraph);
+}
+
+.energy-content ul li {
+    font-size: var(--normal-text);
+}
+
+/* Títulos da seção de empresas */
+.companies-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--heading-2);
+    font-weight: 700;
+}
+
+.companies-section p {
+    font-size: var(--paragraph-large);
+}
+
+.company-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--heading-4);
+    font-weight: 700;
+}
+
+.company-card p {
+    font-size: var(--normal-text);
+}
+
+/* Títulos das seções de localização */
+.nearby-locations-section h2,
+.sales-points-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--heading-2);
+    font-weight: 700;
+}
+
+/* Tipografia do rodapé */
+.footer-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--heading-5);
+    font-weight: 700;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section ul li a {
+    font-size: var(--normal-text);
+}
+
+/* DIV EXPANSÍVEL  */
+.expandable {
+    width: 100%;
+    max-width: 1160px;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.expandable-header {
+    background: var(--primary-yellow);
+    color: rgba(255, 255, 255, 0.952);
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.expandable-header:hover {
+    background: rgb(189, 155, 5);
+}
+
+.expandable-content {
+    background: white;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.expandable-content.open {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.icon {
+    transition: transform 0.3s;
+}
+
+.icon.rotate {
+    transform: rotate(180deg);
+}
+
+
+/* =============================================
+   SISTEMA DE ACESSIBILIDADE - TAMANHO DE FONTE
+   ============================================= */
+
+   
+/* Tamanhos de fonte normal (padrão) */
+body.normal-font {
+    --base-font-size: 17px;
+    --heading-1: 3.6rem;
+    --heading-2: 2.6rem;
+    --heading-3: 2.0rem;
+    --heading-4: 1.5rem;
+    --heading-5: 1.3rem;
+    --paragraph: 1.1rem;
+    --paragraph-large: 1.3rem;
+    --button-text: 1.2rem;
+    --normal-text: 1.0rem;
+}
+
+/* Tamanhos de fonte aumentados */
+body.large-font {
+    --base-font-size: 20px;
+    --heading-1: 3.6rem;
+    --heading-2: 3.1rem;
+    --heading-3: 2.3rem;
+    --heading-4: 1.6rem;
+    --heading-5: 1.6rem;
+    --paragraph: 1.3rem;
+    --paragraph-large: 1.3rem;
+    --button-text: 1.5rem;
+    --normal-text: 1.2rem;
+}
+
+
+/* =============================================
+   LAYOUT E CONTAINERS
+   ============================================= */
+
+/* Container principal para centralização de conteúdo */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Seções principais com espaçamento consistente */
+section {
+    padding: 60px 0;
+}
+
+/* =============================================
+   CABEÇALHO E NAVEGAÇÃO
+   ============================================= */
+
+/* Cabeçalho principal */
+.header {
+    background-color: var(--primary-yellow);
+    padding: 20px 0;
+    border-bottom: 3px solid var(--primary-black);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container flexível do cabeçalho */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+/* Container do logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+/* Estilo do logo */
+.logo img {
+    height: 60px;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* =============================================
+   BARRA DE PESQUISA
+   ============================================= */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-white);
+    border: 0.1px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin: 0 auto;
+    min-width: 200px;
+    flex: 0 1 auto;
+    gap: 5px;
+    padding: 0px;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    font-size: var(--normal-text);
+    color: var(--primary-black);
+    min-width: 0;
+}
+
+.search-btn {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: var(--button-text);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.search-btn:hover {
+    background-color: var(--dark-gray);
+}
+
+/* Botão de limpar pesquisa  */
+.clear-search-btn {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--transition);
+    flex-shrink: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.clear-search-btn:hover {
+    background-color: #e0e0e0;
+    color: var(--primary-black);
+}
+
+.clear-search-btn:active {
+    transform: scale(0.95);
+}
+
+/* Esconde o botão limpar quando não há texto */
+.search-container:not(.has-text) .clear-search-btn {
+    display: none;
+}
+
+.clear-search-btn.hidden {
+    display: none;
+}
+
+/* Menu de acessibilidade */
+.accessibility-menu {
+    position: relative;
+    margin-left: auto;
+    flex-shrink: 0;
+    z-index: 1001;
+}
+
+
+.accessibility-btn {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    border: none;
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: var(--normal-text);
+        z-index: 1002;
+}
+
+.accessibility-btn:hover {
+    background-color: var(--dark-gray);
+}
+
+.accessibility-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--primary-white);
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 200px;
+    z-index: 1003;
+}
+
+.accessibility-options.show {
+    display: flex;
+}
+
+.accessibility-options button {
+    background-color: var(--light-gray);
+    border: 1px solid var(--primary-black);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--primary-black);
+    font-size: var(--normal-text);
+}
+
+.accessibility-options button:hover {
+    background-color: var(--primary-yellow);
+}
+
+/* Mídias sociais */
+.social-media {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-link img {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 2px solid var(--primary-black);
+}
+
+.social-link img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Navegação principal */
+.main-nav {
+    background-color: var(--primary-black);
+    padding: 0;
+    position: fixed;
+    top: 100;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-menu li a {
+    display: block;
+    color: var(--primary-white);
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    font-size: var(--button-text);
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+}
+
+.nav-menu li a:hover {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    border-bottom-color: var(--primary-black);
+}
+
+/* =============================================
+   SEÇÃO HERO (PRINCIPAL)
+   ============================================= */
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 3px solid var(--primary-black);
+    background: linear-gradient(135deg, var(--primary-white) 0%, rgba(238, 255, 0, 0.349) 100%);
+    padding-bottom: 100px;
+}
+
+/* Remove imagem inline (usando background-image) */
+.hero-section img {
+    display: none;
+}
+
+/* Imagem de fundo do hero */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-section h1 {
+    margin-bottom: 20px;
+    color: var(--primary-black);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.616);
+}
+
+.hero-section p {
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--primary-black);
+    text-shadow: 1px 1px 4px rgba(201, 201, 201, 0.822);
+}
+
+/* Botão de call-to-action */
+.cta-button {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 15px 40px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--button-text);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background-color: var(--dark-gray);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* =============================================
+   SEÇÃO DE TIPOS DE ENERGIA
+   ============================================= */
+
+.energy-types-section {
+    background-color: var(--light-gray);
+    border-top: 3px solid var(--primary-black);
+    border-bottom: 3px solid var(--primary-black);
+    padding-top: 30px;
+    text-align: center;
+}
+
+.energy-types-section h2,
+.energy-types-section h7 {
+    margin-bottom: 50px;
+    color: var(--primary-black);
+}
+
+/* Cards de tipos de energia */
+.energy-card {
+    display: flex;
+    margin-bottom: 40px;
+    background-color: var(--primary-white);
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.energy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Alterna direção dos cards pares */
+.energy-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.energy-image {
+    flex: 1;
+    min-height: 300px;
+}
+
+.energy-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.energy-content {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--primary-white);
+}
+
+.energy-content h3 {
+    margin-bottom: 15px;
+    color: var(--primary-black);
+}
+
+.energy-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: var(--primary-black);
+}
+
+.energy-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.energy-content ul li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: var(--primary-black);
+}
+
+.energy-content ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-yellow);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* =============================================
+   SEÇÃO DE EMPRESAS PARCEIRAS
+   ============================================= */
+
+.companies-section {
+    background-color: var(--primary-white);
+    text-align: center;
+}
+
+.companies-section h2 {
+    margin-bottom: 20px;
+    color: var(--primary-black);
+}
+
+.companies-section p {
+    margin-bottom: 40px;
+    color: var(--primary-black);
+}
+
+/* Grid de empresas */
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.company-card {
+    background-color: var(--light-gray);
+    padding: 30px;
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.company-sale {
+    background-color: var(--light-gray);
+    padding: 25px;
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    margin-right: 50px;
+}
+.company-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #919090d2;
+}
+
+.company-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-black);
+}
+
+.company-card p {
+    margin-bottom: 20px;
+    color: var(--primary-black);
+}
+
+.contact-btn {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: var(--normal-text);
+}
+
+.contact-btn:hover {
+    background-color: var(--dark-gray);
+}
+
+/* =============================================
+   SEÇÕES DE LOCALIZAÇÃO E PONTOS DE VENDA
+   ============================================= */
+
+.nearby-locations-section,
+.sales-points-section {
+    background-color: var(--light-gray);
+    text-align: center;
+    border-top: 3px solid var(--primary-black);
+}
+
+.nearby-locations-section h2,
+.sales-points-section h2 {
+    margin-bottom: 20px;
+    color: var(--primary-black);
+}
+
+/* Formulários de busca */
+.location-search,
+.sales-search {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.location-search input,
+.sales-search select {
+    padding: 12px 20px;
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    font-size: var(--normal-text);
+    min-width: 250px;
+}
+
+.search-location-btn,
+.show-map-btn {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: var(--normal-text);
+}
+
+.search-location-btn:hover,
+.show-map-btn:hover {
+    background-color: var(--dark-gray);
+}
+
+/* Resultados e mapas */
+.nearby-results,
+.sales-map {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: var(--primary-white);
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--paragraph);
+    color: var(--primary-black);
+}
+
+/* =============================================
+   RODAPÉ
+   ============================================= */
+
+.footer {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 40px 0 20px;
+    border-top: 3px solid var(--primary-yellow);
+    text-align: left;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    color: var(--primary-yellow);
+}
+
+.footer-section p,
+.footer-section li {
+    margin-bottom: 8px;
+    color: var(--primary-white);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li a {
+    color: var(--primary-white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-yellow);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--dark-gray);
+    color: var(--primary-white);
+}
+
+/* =============================================
+   TEMAS DE ACESSIBILIDADE
+   ============================================= */
+
+/* Tema de alto contraste */
+body.high-contrast {
+    --primary-yellow: #eecc37;
+    --primary-black: #1a1a1aee;
+    --primary-white: #F8F8F8;
+    --light-gray: #ccccccdc;
+    --dark-gray: #666666d8;
+}
+
+/* Tema modo escuro */
+body.dark-mode {
+    --primary-yellow: #ffbc03;
+    --primary-black: #121212ec;
+    --primary-white: #e6e6e6;
+    --light-gray: #9a9a9a;
+    --dark-gray: #2a2a2ac9;
+}
+
+/* =============================================
+   ANIMAÇÕES
+   ============================================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============================================
+   RESPONSIVIDADE - MOBILE 
+   ============================================= */
+
+/* Tablets e telas menores */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+           .header {
+        padding: 10px 0;
+        position: relative; /* Muda de sticky para relative se necessário */
+    }
+    .slideshow {
+        height: 600px;
+        width:  800px;
+    }
+    .main-nav {
+       position: relative; /* Muda de sticky para relative se necessário */
+    }
+    .logo-container {
+        order: 1;
+    }
+    
+    .search-container {
+        order: 2;
+        width: 100%;
+        max-width: 400px;
+        gap: 3px;
+        padding: 0px;
+    }
+    
+    .search-container input {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+    
+    .accessibility-menu {
+        order: 3;
+        margin-left: 0;
+    }
+    
+    .energy-card {
+        flex-direction: column !important;
+    }
+    
+    .energy-card:nth-child(even) {
+        flex-direction: column !important;
+    }
+    
+    .energy-image {
+        min-height: 60px;
+    }
+ /* =============================================
+   CORREÇÃO DE RESPONSIVIDADE - STORE ITEMS
+   ============================================= */
+
+/* Definição original */
+.store-item {
+    min-height: 10px;
+}
+
+.company-sale {
+    min-height: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .store-item,
+    .company-sale {
+        min-height: auto !important;
+        height: auto;
+    }
+    
+    .company-sale {
+        margin-right: 0;
+    }
+}
+    .companies-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+    }
+    
+    .nav-menu li a {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    
+    .location-search,
+    .sales-search {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .location-search input,
+    .sales-search select {
+        min-width: 200px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* =============================================
+   DISPOSITIVOS DE ALTA DENSIDADE (RETINA)
+   ============================================= */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .slideshow img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* =============================================
+   IMPRESSÃO
+   ============================================= */
+
+@media print {
+    .slideshow {
+        display: none !important;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+        .slideshow {
+        height: 300px;
+        width:  350px;
+    }
+    .logo-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    .social-link img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    
+    .search-container input {
+        min-width: 150px;
+    }
+    
+    .energy-image {
+        min-height: 100px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .energy-types-section h2,
+    .companies-section h2,
+    .nearby-locations-section h2,
+    .sales-points-section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* =============================================
+   UTILITÁRIOS E COMPORTAMENTOS GLOBAIS
+   ============================================= */
+
+/* Scroll suave para âncoras */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Garante que imagens sejam responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =============================================
+   CORREÇÕES DE RESPONSIVIDADE - MAPA DE VENDAS
+   ============================================= */
+
+/* Container do mapa responsivo */
+.sales-map {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Lista de lojas responsiva */
+.stores-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Item de loja responsivo */
+.store-item {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #21be31;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: auto;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ações da loja em coluna no mobile */
+.store-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.store-actions button,
+.store-actions a {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Company sale responsivo */
+.company-sale {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    margin-right: 0;
+    min-height: auto;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Container de seleção de estado responsivo */
+.sales-search {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#stateSelect {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botões responsivos */
+.show-map-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Modal responsivo */
+.store-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 1000;
+    max-width: 90%;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* WhatsApp button responsivo */
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.whatsapp-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* =============================================
+   MEDIA QUERIES ESPECÍFICAS PARA O MAPA
+   ============================================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .stores-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .slideshow {
+        height: 600px;
+        width: 600px;
+    }
+    .store-item {
+        padding: 10px;
+        margin: 0;
+    }
+    
+    .store-info h4 {
+        font-size: 16px;
+    }
+    
+    .store-info p {
+        font-size: 14px;
+        margin: 3px 0;
+    }
+    
+    .company-sale h3 {
+        font-size: 18px;
+    }
+    
+    .store-count {
+        font-size: 14px;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .stores-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .store-item {
+        padding: 10px;
+    }
+    .expandable-content.open {
+     font-size: 12px;
+    }
+    .store-actions {
+        flex-direction: column;
+    }
+    
+    .store-actions button,
+    .store-actions a {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    .sales-map {
+        padding: 15px;
+    }
+    
+    .company-sale {
+        padding: 15px;
+    }
+    
+    .company-sale h3 {
+        font-size: 16px;
+    }
+    
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+    .store-item {
+        padding: 8px;
+    }
+    
+    .store-info h4 {
+        font-size: 14px;
+    }
+    
+    .store-info p {
+        font-size: 12px;
+    }
+    
+    .store-actions button,
+    .store-actions a {
+        font-size: 11px;
+        padding: 6px;
+    }
+}
+
+/* Garantir que imagens do WhatsApp sejam responsivas */
+.whatsapp-btn img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Text overflow protection */
+.store-info h4,
+.store-info p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Melhorias de espaçamento para mobile */
+@media (max-width: 768px) {
+    .sales-points-section .container {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .sales-map {
+        margin-top: 15px;
+        padding: 15px;
+    }
+}
