@@ -1,3 +1,65 @@
+// ===== FUNÇÃO DE NEGRITO CORRIGIDA =====
+function ativarNegrito() {
+    const body = document.body;
+    const botao = document.querySelector('.bold-toggle-btn');
+    
+    // Alterna a classe no body
+    body.classList.toggle('texto-negrito');
+    
+    // Alterna a classe ativa no botão
+    if (botao) {
+        botao.classList.toggle('active');
+    }
+    
+    // Salva a preferência do usuário
+    const isActive = body.classList.contains('texto-negrito');
+    localStorage.setItem('negritoAtivo', isActive);
+    
+    console.log('Negrito ' + (isActive ? 'ativado' : 'desativado'));
+}
+// Carregar preferências salvas
+document.addEventListener('DOMContentLoaded', function() {
+    const savedContrast = localStorage.getItem('contrast');
+    const savedFontSize = localStorage.getItem('fontSize');
+    const negritoAtivo = localStorage.getItem('negritoAtivo');
+    
+    if (savedContrast) {
+        changeContrast(savedContrast);
+    }
+    
+    if (savedFontSize === 'large') {
+        changeFontSize('large');
+    }
+    
+    // Carregar estado do negrito
+    if (negritoAtivo === 'true') {
+        document.body.classList.add('texto-negrito');
+        const botao = document.querySelector('.bold-toggle-btn');
+        if (botao) {
+            botao.classList.add('active');
+        }
+    }
+    
+    // Configurar evento de Enter para pesquisa
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+    
+    // Fechar menu de acessibilidade ao clicar fora
+    document.addEventListener('click', function(e) {
+        const menu = document.getElementById('accessibilityOptions');
+        const button = document.querySelector('.accessibility-btn');
+        
+        if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
+            menu.classList.remove('show');
+        }
+    });
+});
 // ===== FUNÇÕES BÁSICAS DE NAVEGAÇÃO =====
 // Otimização do slideshow para diferentes tamanhos de tela
 function optimizeSlideshowForScreen() {
