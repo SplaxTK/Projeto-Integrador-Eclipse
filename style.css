@@ -9,7 +9,6 @@
     padding-bottom: 70%; /* Proporção mais baixa para mostrar mais da imagem */
     margin: auto;
     overflow: hidden;
-    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     background: #f5f5f5; /* Fundo para áreas vazias */
 }
