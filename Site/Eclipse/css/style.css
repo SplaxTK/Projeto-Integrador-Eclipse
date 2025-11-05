@@ -1826,3 +1826,17 @@ img {
         padding: 15px;
     }
 }
+.hatsune{
+    background-color: var(--light-gray);
+    padding: 30px;
+    border: 2px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    animation: fadeInUp 0.6s ease-out;
+}
+.hatsune-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}

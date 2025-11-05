@@ -403,7 +403,7 @@ function showSalesMap() {
                         </button>
                         ${phone.length >= 10 ? `
                         <a href="${whatsappLink}" target="_blank" class="whatsapp-btn">
-                                    <img src="./img/whatsapp.png" alt="whats"> WhatsApp </a>
+                                    <img src="./js/img/whatsapp.png" alt="whats"> WhatsApp </a>
                         ` : ''}
                         <button class="contact-store-btn" onclick="showStoreDetails('${store.name}', '${store.address}', '${store.phone}')">
                             ℹ️ Detalhes
