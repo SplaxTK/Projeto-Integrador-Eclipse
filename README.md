@@ -3,7 +3,7 @@ Energia Renovável
 
 ##
 Integrantes: 
-##
+
 DAVI SANTANA;
 FRANCISCO BANDEL LEAL;
 PEDRO HENRIQUE PALU SKORA;
